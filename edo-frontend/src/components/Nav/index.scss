@@ -1,0 +1,10 @@
+.edo-nav {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  top: 0;
+  height: 64px;
+  width: 100%;
+  padding-left: 24px;
+  background-color: var(--edo-blue);
+}

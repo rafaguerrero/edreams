@@ -1,9 +1,13 @@
 import React from 'react';
+import Nav from '../../components/Nav';
 import './index.scss';
 
 function Results() {
     return (
-        <h1>Results</h1>
+        <div className='edo-results'>
+            <Nav />
+            <h1>Home</h1>
+        </div>
     );
 }
 
