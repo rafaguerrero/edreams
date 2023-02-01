@@ -1,0 +1,17 @@
+.edo-location {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 27px 24px 24px 24px;
+
+  &-icon {
+    color: #888;
+    transform: rotate(90deg);
+  }
+
+  &-text {
+    padding: 0 10px;
+    color: #333;
+    font-weight: bold;
+  }
+}

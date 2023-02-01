@@ -1,0 +1,13 @@
+.edo-dropdown {
+  display: flex;
+  position: relative;
+
+  &-options {
+    position: absolute;
+    width: 400px;
+    top: 100%;
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+  }
+}
