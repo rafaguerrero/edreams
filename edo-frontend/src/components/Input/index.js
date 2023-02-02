@@ -2,23 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-function Input({ name, value, placeholder, className, onChange }) {
+function Input({ name, type, value, placeholder, className, onChange }) {
     return (
         <input className={`edo-input ${className || ''}`}
                 name={name}
                 value={value}
                 placeholder={placeholder}
-                type="text"
+                type={type}
                 onChange={(e) => onChange(e.target.value)}/>
     );
 }
 
 Input.propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    placeholder: PropTypes.string,
     className: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    type: PropTypes.string.isRequired
 };
 
 export default Input;

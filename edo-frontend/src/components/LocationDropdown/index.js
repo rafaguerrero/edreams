@@ -14,7 +14,12 @@ function LocationDropdown({ name, placeholder, locations, onSelect }) {
         setFiltered(locations.filter(loc => loc.match(new RegExp(filter, 'i'))));
     }, [locations]);
 
-    useEffect(() => onFilterChange(''), [locations, onFilterChange])
+    useEffect(() => onFilterChange(''), [locations, onFilterChange]);
+
+    const onOptionClick = (location) => {
+        onFilterChange(location);
+        onSelect(location);
+    }
     
     return (
         <div className='edo-dropdown'
@@ -22,6 +27,7 @@ function LocationDropdown({ name, placeholder, locations, onSelect }) {
                 onBlur={() => setFocus(false)}>
 
             <Input name={name}
+                    type='text'
                     value={filter}
                     placeholder={placeholder}
                     onChange={onFilterChange}/>
@@ -33,7 +39,7 @@ function LocationDropdown({ name, placeholder, locations, onSelect }) {
                         filtered.length === 0 &&
                         <div>No results</div>
                     }
-                    { filtered.map(location => <Location key={location} location={location} onClick={onFilterChange}/>) }
+                    { filtered.map(location => <Location key={location} location={location} onClick={onOptionClick}/>) }
                 </ul>
             }
         </div>

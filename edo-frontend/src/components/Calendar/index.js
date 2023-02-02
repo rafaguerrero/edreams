@@ -1,13 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '../Input';
 import './index.scss';
 
-function Calendar() {
+function Calendar({ name, onSelect }) {
     return (
         <div className='edo-calendar'>
-            <Input name="calendar" value='' placeholder='20/10/2022' onChange={() => console.log("CHANGE")}/>
+            <Input type='date'
+                    name={name}
+                    onChange={onSelect}/>
         </div>
     );
 }
+
+Calendar.propTypes = {
+    name: PropTypes.string.isRequired,
+    onSelect: PropTypes.func,
+};
 
 export default Calendar;
